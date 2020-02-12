@@ -5,3 +5,6 @@
 
 # depois
 `npm start`
+
+# no heroku
+https://cotacoes-hugows007.herokuapp.com/
