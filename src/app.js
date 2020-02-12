@@ -79,6 +79,8 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.group('Server is up in port 3000')
+const port = process.env.PORT || 3000
+
+app.listen(port, () => {
+    console.group(`Server is up in port ${port}`)
 })
