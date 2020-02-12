@@ -10,7 +10,9 @@ const day_high = document.querySelector('#day_high')
 const day_low = document.querySelector('#day_low')
 const icon = document.querySelector('.icon')
 
-function limparBusca() {
+function limparMensagem() {
+    mainMensage.innerText = ''
+    messageError.innerText = ''
     price.innerText = ''
     price_open.innerText = ''
     day_high.innerText = ''
@@ -18,7 +20,7 @@ function limparBusca() {
 }
 
 cotacoesForm.addEventListener('submit', (event) => {
-    limparBusca();
+    limparMensagem();
     mainMensage.innerText = 'Buscando...'
     event.preventDefault()
     const ativo = document.querySelector('input').value
@@ -34,6 +36,7 @@ cotacoesForm.addEventListener('submit', (event) => {
                 mainMensage.innerText = `Alguma coisa deu errado: `
                 messageError.innerText = `${data.error.mensage} - código: ${data.error.code}`
             } else {
+                limparMensagem();
                 price.innerText = data.price
                 price_open.innerText = data.price_open
                 day_high.innerText = data.day_high
